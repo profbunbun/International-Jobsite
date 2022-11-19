@@ -6,9 +6,11 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import CreatePost from './components/jobPosts/create-post.component'
+
 import EditPost from './components/jobPosts/edit-post.component'
+
 import PostList from './components/jobPosts/post-list.component'
 import CreateProfile from './components/profiles/create-profile.component'
 import ProfileList from './components/profiles/profile-list.component'
@@ -37,7 +39,7 @@ function App() {
                   </Link>
                 </Nav>
                 <Nav>
-                  <Link to={'/login'} className="nav-link">NavBar
+                  <Link to={'/login'} className="nav-link">
                     Login
                   </Link>
                 </Nav>
@@ -59,7 +61,7 @@ function App() {
           <Row>
             <Col md={12}>
               <div className="wrapper">
-                <Routes>
+                <Switch>
                   <Route
                     exact
                     path="/"
@@ -96,7 +98,7 @@ function App() {
                     component={(props) => <EditPost {...props} />}
                   />
                
-                </Routes>
+                </Switch>
               </div>
             </Col>
           </Row>
